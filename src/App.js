@@ -1,13 +1,12 @@
-import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Public from "./components/Public";
-import Login from "./features/auth/Login";
-import DashLayout from "./components/DashLayout";
-import Welcome from "./features/auth/Welcome";
-import NotesList from "./features/notes/NotesList";
-import UsersList from "./features/users/UsersList";
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Public from './components/Public'
+import Login from './features/auth/Login';
+import DashLayout from './components/DashLayout'
+import Welcome from './features/auth/Welcome'
+import NotesList from './features/notes/NotesList'
+import UsersList from './features/users/UsersList'
 
-import(Routes)
 function App() {
   return (
     <Routes>
@@ -27,7 +26,7 @@ function App() {
             <Route index element={<UsersList />} />
           </Route>
 
-        </Route> {/*END DASH*/}
+        </Route>{/* End Dash */}
 
       </Route>
     </Routes>
