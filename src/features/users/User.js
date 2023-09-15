@@ -1,9 +1,9 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
-import { selectUserById } from "./usersApiSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from 'react-router-dom'
+
+import { useSelector } from 'react-redux'
+import { selectUserById } from './usersApiSlice'
 
 const User = ({ userId }) => {
     const user = useSelector(state => selectUserById(state, userId))
@@ -13,10 +13,10 @@ const User = ({ userId }) => {
     if (user) {
         const handleEdit = () => navigate(`/dash/users/${userId}`)
 
-        const userRolesString = user.roles.toString().replaceAll(',' , ',')
+        const userRolesString = user.roles.toString().replaceAll(',', ', ')
 
         const cellStatus = user.active ? '' : 'table__cell--inactive'
-     
+
         return (
             <tr className="table__row user">
                 <td className={`table__cell ${cellStatus}`}>{user.username}</td>
@@ -34,5 +34,4 @@ const User = ({ userId }) => {
 
     } else return null
 }
-
-export default User;
+export default User
