@@ -1,23 +1,23 @@
-import React from "react"
-import { useUpdateUserMutation, useDeleteUserMutation } from "./notesApiSlice"
+import { useState, useEffect } from "react"
+import { useUpdateNoteMutation, useDeleteNoteMutation } from "./notesApiSlice"
 import { useNavigate } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 
-const EditNoteForm = ({note, users}) => {
+const EditNoteForm = ({ note, users }) => {
 
     const [updateNote, {
         isLoading,
         isSuccess,
         isError,
         error
-    }] = useUpdateUserMutation()
+    }] = useUpdateNoteMutation()
 
     const [deleteNote, {
-        isSuccess: isDelSuccesss,
+        isSuccess: isDelSuccess,
         isError: isDelError,
         error: delerror
-    }] = useDeleteUserMutation()
+    }] = useDeleteNoteMutation()
 
     const navigate = useNavigate()
 
@@ -67,7 +67,6 @@ const EditNoteForm = ({note, users}) => {
         )
     })
 
-    
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
     const validTitleClass = !title ? "form__input--incomplete" : ''
     const validTextClass = !text ? "form__input--incomplete" : ''
