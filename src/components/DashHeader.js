@@ -1,5 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { useEffect } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 const DashHeader = () => {
     const content = (
@@ -18,4 +21,4 @@ const DashHeader = () => {
     return content
 }
 
-export default DashHeader;
+export default DashHeader
